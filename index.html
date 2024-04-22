@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information Form</title>
+    <style>
+    
+        body, input, select, button {
+            font-family: 'Arial', sans-serif;
+            margin: 10px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #fff;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type=text], input[type=tel], select, input[type=date] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        button[type=submit] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-image: linear-gradient(45deg, #4b79a1, #283e51);
+            color: white;
+            transition: background 0.3s ease;
+        }
+        button[type=submit]:hover {
+            background-image: linear-gradient(45deg, #283e51, #4b79a1);
+        }
+        .hint {
+  color: grey;
+  font-size: 0.8em;
+}
+ .numhint {
+  color: white;
+  font-size: 0.8em;
+}
+.hint.error {
+  color: red; 
+}
+
+    </style>
+</head>
+<body>
+     <br><br>
+    <form action="https://www.it.murdoch.edu.au/cgi-bin/reply1.pl" id="userInfoForm" method="post">
+        <br><br> <br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div id="nameHint" class="hint">Your name without special characters</div>
+        
+        <br>
+        <label for="phone">Phone Number:</label>
+        <div id="numhint" class="numhint">example:+971123456789</div>
+        <input type="tel" id="phone" name="phone" required pattern="^\+[1-9]\d{1,14}$"><br><br>
+        
+        <label for="birthDate">Birth Date (DD/MM/YYYY):</label>
+        <input type="date" id="birthDate" name="birthDate" required><br><br>
+        
+        <label for="pastime">Favourite Pastime:</label>
+        <select id="pastime" name="pastime">
+            <option value="Surfing the Web">Surfing the Web</option>
+            <option value="Playing Sport">Playing Sport</option>
+            <option value="Listening to Music">Listening to Music</option>
+            <option value="Watching TV">Watching TV</option>
+            <option value="Playing Games">Playing Games</option>
+            <option value="Community Service">Community Service</option>
+            <option value="Daydreaming">Daydreaming</option>
+            <option value="Reading">Reading</option>
+            <option value="Meditation">Meditation</option>
+        </select><br><br>
+        
+    <button type="submit" name="submitForm">Submit</button>
+
+    </form>
+ 
+
+  
+    <script src="validation.js"></script> 
+</body>
+</html>
+
+    
+
+
+    
+   
